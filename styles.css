@@ -33,7 +33,10 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -131,7 +134,7 @@ ul {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -184,9 +187,10 @@ ul {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1585747860715-28b9634317a2?q=80&w=2070&auto=format&fit=crop'); /* Placeholder high quality barber image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fotos/616196833_920022800689949_2742988847193673324_n.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,12 +199,31 @@ ul {
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    /* Removed extra overlay, handled in linear-gradient above for better control/loading */
+    display: none;
+}
+
+/* ... */
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--bg-darker);
+}
+
+.gallery-grid {
+    display: grid;
+    /* Force 3 columns for that "perfect grid" look with 9 images */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ... */
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    /* ... */
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .hero-content {
@@ -214,7 +237,7 @@ ul {
     font-size: 4rem;
     margin-bottom: 10px;
     color: white;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
@@ -226,13 +249,31 @@ ul {
 }
 
 /* Animations */
-.fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
-.fade-in-delay { animation: fadeIn 1s ease 0.5s forwards; opacity: 0; }
-.fade-in-delay-2 { animation: fadeIn 1s ease 1s forwards; opacity: 0; }
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.fade-in-delay {
+    animation: fadeIn 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-2 {
+    animation: fadeIn 1s ease 1s forwards;
+    opacity: 0;
+}
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Booking Section */
@@ -246,7 +287,7 @@ ul {
     background-color: var(--bg-card);
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
 }
 
@@ -271,7 +312,8 @@ label {
     font-size: 0.9rem;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 12px;
     background-color: #2a2a2a;
@@ -284,7 +326,8 @@ input, select {
     transition: var(--transition);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: var(--gold);
 }
 
@@ -373,7 +416,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     min-width: 300px;
     border-radius: 8px;
     overflow: hidden;
-    filter: grayscale(100%) invert(100%) contrast(90%); /* Dark map trick */
+    filter: grayscale(100%) invert(100%) contrast(90%);
+    /* Dark map trick */
     border: 2px solid var(--gold);
 }
 
@@ -469,23 +513,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     @keyframes navLinkFade {
-        from { opacity: 0; transform: translateX(50px); }
-        to { opacity: 1; transform: translateX(0); }
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .cancellation-form {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cancellation-form input {
         width: 100%;
     }
