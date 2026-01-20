@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
 
         try {
-            // Changed from webhook-test to webhook for production use
-            const response = await fetch('https://unstormable-trothless-gilberto.ngrok-free.dev/webhook/ad75122a-497e-41ee-9d8d-3f254f51b366', {
+            // Reverting to webhook-test as explicitly requested for testing/n8n editor usage
+            const response = await fetch('https://unstormable-trothless-gilberto.ngrok-free.dev/webhook-test/ad75122a-497e-41ee-9d8d-3f254f51b366', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
 
         try {
-            // Using the same webhook (production)
-            const response = await fetch('https://unstormable-trothless-gilberto.ngrok-free.dev/webhook/ad75122a-497e-41ee-9d8d-3f254f51b366', {
+            // Using the same webhook (test)
+            const response = await fetch('https://unstormable-trothless-gilberto.ngrok-free.dev/webhook-test/ad75122a-497e-41ee-9d8d-3f254f51b366', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
