@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Simulate network delay
         setTimeout(() => {
-            alert('¡Reserva confirmada con éxito! Te esperamos.');
+            alert('¡Reserva recibida y aceptada! Te esperamos.');
             bookingForm.reset();
             timeSelect.disabled = true;
             timeSelect.innerHTML = '<option value="">Selecciona primero un servicio</option>';
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Simulate network delay
         setTimeout(() => {
-            alert('Solicitud de cancelación enviada correctamente.');
+            alert('La cita ha sido cancelada correctamente.');
             cancellationForm.reset();
 
             submitBtn.textContent = originalText;
