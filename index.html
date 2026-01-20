@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Studio Barber Shop</title>
+    <meta name="description" content="Barbería moderna en Madrid. Estilo, precisión y actitud. Reserva tu cita online.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">MAX STUDIO</a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#booking">Reservar</a></li>
+                <li><a href="#gallery">Galería</a></li>
+                <li><a href="#location">Ubicación</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">MAX STUDIO BARBER SHOP</h1>
+            <p class="tagline fade-in-delay">ESTILO, PRECISIÓN Y ACTITUD</p>
+            <a href="#booking" class="btn btn-primary fade-in-delay-2">RESERVAR CITA</a>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section booking-section">
+        <div class="container">
+            <h2 class="section-title">RESERVA TU CITA</h2>
+            <div class="booking-container">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="employee">Barbero</label>
+                        <select id="employee" name="employee" required>
+                            <option value="Cualquiera">Cualquiera</option>
+                            <option value="Ayoub">Ayoub</option>
+                            <option value="Ragnar Ab">Ragnar Ab</option>
+                            <option value="Yasin">Yasin</option>
+                            <option value="Alejandro">Alejandro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Servicio</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="Corte de pelo" data-price="11" data-duration="30">Corte de pelo - 11€ (30 min)</option>
+                            <option value="Cortar y barba" data-price="16" data-duration="40">Cortar y barba - 16€ (40 min)</option>
+                            <option value="Corte de barba" data-price="6" data-duration="15">Corte de barba - 6€ (15 min)</option>
+                            <option value="Jubilados" data-price="8" data-duration="20">Jubilados - 8€ (20 min)</option>
+                            <option value="Cejas" data-price="3" data-duration="10">Cejas - 3€ (10 min)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Fecha</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Hora</label>
+                            <select id="time" name="time" required disabled>
+                                <option value="">Selecciona primero un servicio</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">CONFIRMAR RESERVA</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancellation Section -->
+    <section id="cancellation" class="section cancellation-section">
+        <div class="container">
+            <h2 class="section-title-small">¿NECESITAS CANCELAR?</h2>
+            <p class="section-desc">Si no puedes asistir, por favor cancela tu cita para liberar el hueco.</p>
+            <form id="cancellationForm" class="cancellation-form">
+                <input type="text" id="cancelName" name="name" placeholder="Tu Nombre" required>
+                <input type="email" id="cancelEmail" name="email" placeholder="Tu Email" required>
+                <button type="submit" class="btn btn-secondary">CANCELAR CITA</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">GALERÍA</h2>
+            <div class="gallery-grid">
+                <!-- Using filenames found in the file system -->
+                <div class="gallery-item"><img src="fotos/614854445_806688182423603_6381585991481972604_n.jpg" alt="Barbershop Work 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/614886055_911359418128691_6870970335472322327_n.jpg" alt="Barbershop Work 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/615047851_911313978132025_7686383220628662739_n.jpg" alt="Barbershop Work 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/615051952_1601498341006170_7528876136289270963_n.jpg" alt="Barbershop Work 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/616196833_920022800689949_2742988847193673324_n.jpg" alt="Barbershop Work 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/617517021_1430504608639657_1068881685685668652_n.jpg" alt="Barbershop Work 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/618337475_1791124541579999_4100679849414398982_n.jpg" alt="Barbershop Work 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="fotos/619247588_3929948877305177_3563618423165250462_n.jpg" alt="Barbershop Work 8" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section location-section">
+        <div class="container">
+            <h2 class="section-title">UBICACIÓN</h2>
+            <div class="location-content">
+                <div class="map-container">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.467406987413!2d-3.61466088460598!3d40.37628897937015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225a2b0238e83%3A0x62919349603f7457!2sBulevar%20de%20Indalecio%20Prieto%2C%2044%2C%20local%202%2C%20Vic%C3%A1lvaro%2C%2028032%20Madrid!5e0!3m2!1sen!2ses!4v1705680000000!5m2!1sen!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="address-details">
+                    <h3>VISÍTANOS</h3>
+                    <p>Bulevar de Indalecio Prieto, 44, Local 2</p>
+                    <p>28032, Madrid</p>
+                    <p class="directions-link"><a href="https://maps.app.goo.gl/YourLinkHere" target="_blank">Cómo llegar &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>MAX STUDIO</h4>
+                <p>Estilo y precisión en cada corte.</p>
+            </div>
+            <div class="footer-col">
+                <h4>HORARIO</h4>
+                <p>Lunes - Sábado: 11:00 - 21:00</p>
+                <p>Domingo: Cerrado</p>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACTO</h4>
+                <p>Bulevar de Indalecio Prieto, 44</p>
+                <!-- Add phone if available later -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Max Studio Barber Shop. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
