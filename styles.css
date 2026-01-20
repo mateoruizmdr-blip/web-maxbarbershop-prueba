@@ -187,7 +187,7 @@ ul {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fotos/616196833_920022800689949_2742988847193673324_n.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fotos/bg-hero.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -416,7 +416,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     min-width: 300px;
     border-radius: 8px;
     overflow: hidden;
-    filter: grayscale(100%) invert(100%) contrast(90%);
+    /* filter: grayscale(100%) invert(100%) contrast(90%); */
     /* Dark map trick */
     border: 2px solid var(--gold);
 }
