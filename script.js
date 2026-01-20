@@ -89,47 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
     bookingForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            employee: document.getElementById('employee').value,
-            service: document.getElementById('service').value, // This is the value, name of service
-            date: document.getElementById('date').value,
-            time: document.getElementById('time').value,
-            type: 'booking' // Identifier for the webhook
-        };
+        // Simulate creating form data object (could be logged if needed)
+        // const formData = { ... }; 
 
         const submitBtn = bookingForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Enviando...';
         submitBtn.disabled = true;
 
-        try {
-            // Reverting to webhook-test as explicitly requested for testing/n8n editor usage
-            const response = await fetch('https://unstormable-trothless-gilberto.ngrok-free.dev/webhook-test/ad75122a-497e-41ee-9d8d-3f254f51b366', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+        // Simulate network delay
+        setTimeout(() => {
+            alert('¡Reserva confirmada con éxito! Te esperamos.');
+            bookingForm.reset();
+            timeSelect.disabled = true;
+            timeSelect.innerHTML = '<option value="">Selecciona primero un servicio</option>';
 
-            if (response.ok) {
-                alert('¡Reserva confirmada con éxito! Te esperamos.');
-                bookingForm.reset();
-                timeSelect.disabled = true;
-                timeSelect.innerHTML = '<option value="">Selecciona primero un servicio</option>';
-            } else {
-                console.error('Submission failed:', response.status, response.statusText);
-                alert(`Hubo un error (${response.status}). Por favor, inténtalo de nuevo o contacta con nosotros.`);
-            }
-        } catch (error) {
-            console.error('Network Error:', error);
-            alert('Error de conexión: ' + error.message + '. Por favor revisa tu internet o intenta más tarde.');
-        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }
+        }, 1500);
     });
 
     // --- Cancellation System Logic ---
@@ -138,39 +115,18 @@ document.addEventListener('DOMContentLoaded', () => {
     cancellationForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = {
-            name: document.getElementById('cancelName').value,
-            email: document.getElementById('cancelEmail').value,
-            type: 'cancellation'
-        };
-
         const submitBtn = cancellationForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Procesando...';
         submitBtn.disabled = true;
 
-        try {
-            // Using the same webhook (test)
-            const response = await fetch('https://unstormable-trothless-gilberto.ngrok-free.dev/webhook-test/ad75122a-497e-41ee-9d8d-3f254f51b366', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+        // Simulate network delay
+        setTimeout(() => {
+            alert('Solicitud de cancelación enviada correctamente.');
+            cancellationForm.reset();
 
-            if (response.ok) {
-                alert('Solicitud de cancelación enviada correctamente.');
-                cancellationForm.reset();
-            } else {
-                alert('Hubo un error al enviar la solicitud.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Error de conexión.');
-        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }
+        }, 1500);
     });
 });
